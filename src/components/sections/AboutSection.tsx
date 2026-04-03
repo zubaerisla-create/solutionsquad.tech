@@ -54,6 +54,15 @@ const TEAM = [
     linkedin: "https://www.linkedin.com/in/abdullah-al-zubaer-309065292/?skipRedirect=true",
     skills: ["TypeScript", "Golang", "Docker"],
   },
+    {
+    name: "Rabeya Akter Zumur",
+    role: "International Sales Communications",
+    bio: "Full Stack Dev @ Join Venture AI. Competitive programmer, Codeforces 1320.",
+    avatar: "https://i.ibb.co.com/CdbyF4R/1775199668176.jpg",
+    linkedin: "https://www.linkedin.com/in/abdullah-al-zubaer-309065292/?skipRedirect=true",
+    skills: ["Communication", "Sales", "Leadership"],
+  },
+
 ];
 
 export default function AboutSection() {
