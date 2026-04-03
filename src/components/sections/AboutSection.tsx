@@ -85,7 +85,7 @@ export default function AboutSection() {
 
             <motion.div variants={fadeInUp} className="space-y-4 text-[var(--muted)] leading-relaxed">
               <p>
-                Nexora was founded in 2018 by a team of engineers who were
+                Solution Sqauad was founded in 2018 by a team of engineers who were
                 tired of seeing great ideas fail due to poor technical execution.
                 We set out to build a studio where craft, speed, and honesty aren't
                 trade-offs — they're the standard.

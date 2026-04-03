@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="border-t border-dark-600/30">
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand - Animated Nexora */}
+          {/* Brand - Animated Solution Sqauad */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
               <motion.div
@@ -30,7 +30,7 @@ export default function Footer() {
                 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Nexora
+                Solution Sqauad
               </motion.div>
             </Link>
 
@@ -105,7 +105,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-dark-600/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[var(--muted)]">
-            © {new Date().getFullYear()} Nexora. All rights reserved.
+            © {new Date().getFullYear()} Solution Sqauad. All rights reserved.
           </p>
           <p className="text-xs text-[var(--muted)] font-mono">
             Built with Next.js + Framer Motion

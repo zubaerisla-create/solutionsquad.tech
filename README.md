@@ -1,4 +1,4 @@
-# Nexora — Portfolio Website
+# Solution Sqauad — Portfolio Website
 
 A modern, professional single-page portfolio for a software development company built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
 

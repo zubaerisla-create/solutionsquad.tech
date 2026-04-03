@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexora — Software Development Company",
+  title: "Solution Sqauad — Software Development Company",
   description:
     "We build exceptional mobile apps, web platforms, and backend systems. React Native, Flutter, Next.js, NestJS, FastAPI specialists.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "web development",
   ],
   openGraph: {
-    title: "Nexora",
+    title: "Solution Sqauad",
     description: "We craft exceptional digital products.",
     type: "website",
   },

@@ -132,7 +132,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "NovaTech Inc.",
     avatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Sarah",
     rating: 5,
-    text: "Nexora delivered our mobile app 2 weeks ahead of schedule. The code quality and attention to UX details exceeded our expectations. Our users love the performance.",
+    text: "Solution Sqauad delivered our mobile app 2 weeks ahead of schedule. The code quality and attention to UX details exceeded our expectations. Our users love the performance.",
   },
   {
     id: "2",

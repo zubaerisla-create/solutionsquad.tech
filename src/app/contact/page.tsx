@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Contact — Nexora",
-  description: "Get in touch with Nexora to start your next project.",
+  title: "Contact — Solution Sqauad",
+  description: "Get in touch with Solution Sqauad to start your next project.",
 };
 
 export default function ContactPage() {

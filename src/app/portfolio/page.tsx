@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Nexora",
+  title: "Portfolio — Solution Sqauad",
   description: "Explore our portfolio of mobile apps, web platforms, and backend systems.",
 };
 

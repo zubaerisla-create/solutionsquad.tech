@@ -50,7 +50,7 @@ export default function Navbar() {
       >
         <div className="section-container">
           <nav className="flex items-center justify-between h-16 lg:h-20">
-      {/* Premium Nexora Logo */}
+      {/* Premium Solution Sqauad Logo */}
 <Link href="/" className="flex items-center gap-3 group">
   
   
