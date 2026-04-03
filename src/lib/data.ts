@@ -14,20 +14,10 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://learening-management-system.vercel.app",
     tech: ["Next.js 16", "NestJS", "React 19", "Tailwind 4", "MongoDB", "Stripe", "Redux"]
   },
-  {
-    id: "2",
-    title: "Parcel Delivery System",
-    description: "A secure and role-based Parcel Delivery system for Senders, Receivers, and Admins to manage parcels seamlessly.",
-    image: "https://github.com/nayeem-miah/nayeem/blob/main/public/lms1.png?raw=true",
-    category: "web",
-    gradient: "from-indigo-500/20 to-blue-500/20",
-    githubUrl: "https://github.com/nayeem-miah/parcel-delvey-client",
-    liveUrl: "https://parcel-delevary-client.vercel.app",
-    tech: ["TypeScript", "React.js", "Redux Toolkit", "RTK Query", "Node.js", "Express.js", "MongoDB"]
-  },
+ 
 
   {
-    id: "3",
+    id: "2",
     title: "Quick Buzz E-Commerce",
     description: "A high-performance e-commerce platform tailored for the local market with integrated payment gateways and smooth UX.",
     image: "https://github.com/nayeem-miah/nayeem/blob/main/public/p1.png?raw=true",
@@ -36,6 +26,17 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/nayeem-miah/quick-buzz-E-Commare-Team",
     liveUrl: "https://quick-bus-bd.web.app/",
     tech: ["TypeScript", "React.js", "Node.js", "Express.js", "Firebase", "MongoDB"]
+  },
+   {
+    id: "3",
+    title: "Parcel Delivery System",
+    description: "A secure and role-based Parcel Delivery system for Senders, Receivers, and Admins to manage parcels seamlessly.",
+   image: "https://i.ibb.co.com/4nX7Gt4n/Gemini-Generated-Image-n2j222n2j222n2j2.png",
+    category: "web",
+    gradient: "from-indigo-500/20 to-blue-500/20",
+    githubUrl: "https://github.com/nayeem-miah/parcel-delvey-client",
+    liveUrl: "https://parcel-delevary-client.vercel.app",
+    tech: ["TypeScript", "React.js", "Redux Toolkit", "RTK Query", "Node.js", "Express.js", "MongoDB"]
   },
   {
     id: "4",
@@ -216,6 +217,6 @@ export const NAV_LINKS = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#portfolio" },
   { label: "Stack", href: "#stack" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Feedback", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];

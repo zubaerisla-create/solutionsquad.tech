@@ -21,7 +21,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden grid-bg"
+      className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden grid-bg"
     >
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -75,7 +75,7 @@ export default function HeroSection() {
       </div>
 
       {/* Main content */}
-      <motion.div style={{ opacity }} className="relative z-10 section-container pt-32 pb-20">
+      <motion.div style={{ opacity }} className="relative z-10 section-container pt-24 pb-12">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
           <motion.div
