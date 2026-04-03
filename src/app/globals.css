@@ -38,16 +38,6 @@
     overflow-x: hidden;
   }
 
-  * {
-    cursor: none;
-  }
-
-  @media (max-width: 768px) {
-    * {
-      cursor: auto;
-    }
-  }
-
   ::selection {
     background-color: rgba(20, 184, 166, 0.25);
     color: #14b8a6;

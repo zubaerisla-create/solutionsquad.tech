@@ -2,19 +2,9 @@ import type { Project, Service, Testimonial, TechItem, TeamMember } from "@/type
 
 export const PROJECTS: Project[] = [
 
-  {
+  
+      {
     id: "1",
-    title: "Parcel Delivery System",
-    description: "A secure and role-based Parcel Delivery system for Senders, Receivers, and Admins to manage parcels seamlessly.",
-    image: "https://github.com/nayeem-miah/nayeem/blob/main/public/lms1.png?raw=true",
-    category: "web",
-    gradient: "from-indigo-500/20 to-blue-500/20",
-    githubUrl: "https://github.com/nayeem-miah/parcel-delvey-client",
-    liveUrl: "https://parcel-delevary-client.vercel.app",
-    tech: ["TypeScript", "React.js", "Redux Toolkit", "RTK Query", "Node.js", "Express.js", "MongoDB"]
-  },
-  {
-    id: "2",
     title: "Full-Stack LMS Platform",
     description: "Robust LMS with course creation, Stripe payments, and RBAC. Admin: admin@lms.com | Pass: admin12",
     image: "https://github.com/nayeem-miah/nayeem/blob/main/public/lms1.png?raw=true",
@@ -24,6 +14,18 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://learening-management-system.vercel.app",
     tech: ["Next.js 16", "NestJS", "React 19", "Tailwind 4", "MongoDB", "Stripe", "Redux"]
   },
+  {
+    id: "2",
+    title: "Parcel Delivery System",
+    description: "A secure and role-based Parcel Delivery system for Senders, Receivers, and Admins to manage parcels seamlessly.",
+    image: "https://github.com/nayeem-miah/nayeem/blob/main/public/lms1.png?raw=true",
+    category: "web",
+    gradient: "from-indigo-500/20 to-blue-500/20",
+    githubUrl: "https://github.com/nayeem-miah/parcel-delvey-client",
+    liveUrl: "https://parcel-delevary-client.vercel.app",
+    tech: ["TypeScript", "React.js", "Redux Toolkit", "RTK Query", "Node.js", "Express.js", "MongoDB"]
+  },
+
   {
     id: "3",
     title: "Quick Buzz E-Commerce",
