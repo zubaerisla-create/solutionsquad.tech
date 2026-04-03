@@ -13,7 +13,7 @@ export default function HomePage() {
       <AboutSection />
       <ServicesSection />
       <PortfolioSection />
-      <TechStackSection />
+      {/* <TechStackSection /> */}
       <TestimonialsSection />
       <ContactSection />
     </>

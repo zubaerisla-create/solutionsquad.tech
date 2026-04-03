@@ -19,7 +19,7 @@ const FILTERS: { label: string; value: Filter }[] = [
   { label: "All", value: "all" },
   { label: "Mobile", value: "mobile" },
   { label: "Web", value: "web" },
-  { label: "Backend", value: "backend" },
+  
 ];
 
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {

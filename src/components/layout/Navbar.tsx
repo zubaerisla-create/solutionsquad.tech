@@ -44,24 +44,24 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-dark-900/80 dark:bg-dark-900/80 bg-white/80 backdrop-blur-xl border-b border-dark-600/30"
+            ? "bg-dark-900/80 dark:bg-dark-900/80 bg-white/80 backdrop-blur-xl  border-dark-600/30"
             : "bg-transparent"
         )}
       >
         <div className="section-container">
           <nav className="flex items-center justify-between h-16 lg:h-20">
-      {/* Premium Solution Sqauad Logo */}
-<Link href="/" className="flex items-center gap-3 group">
-  
-  
-  <div>
-    <span className="font-display font-extrabold text-3xl tracking-[-2px] text-white">
-      Solution
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Squad</span>
-    </span>
-    <p className="text-[10px] text-zinc-400 -mt-1 tracking-[3px] font-mono">NEXT ERA</p>
-  </div>
-</Link>
+            {/* Premium Solution Squad Logo */}
+            <Link href="/" className="flex items-center gap-3 group">
+
+
+              <div>
+                <span className=" text-3xl tracking-[-2px] text-white">
+                  Solution 
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff]  to-[#12d400]"> squad</span>
+                </span>
+                <p className="text-[10px] text-zinc-400 -mt-1 tracking-[3px] font-mono">NEXT ERA</p>
+              </div>
+            </Link>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-1">
@@ -93,8 +93,8 @@ export default function Navbar() {
 
             {/* Actions */}
             <div className="flex items-center gap-3">
-            
-              <Link href="#contact" className="hidden sm:block btn-primary text-sm py-2 px-5">
+
+              <Link href="#contact" className="hidden  sm:block my-shadow  text-[#25cf03] rounded-full text-sm py-2 px-5">
                 Get In Touch
               </Link>
               {/* Mobile menu toggle */}
@@ -132,7 +132,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-16 z-40 bg-dark-900/95 backdrop-blur-xl border-b border-dark-600/50 lg:hidden"
+            className="fixed inset-x-0 top-16 z-40 bg-dark-900/95 backdrop-blur-xl  border-dark-600/50 lg:hidden"
           >
             <div className="section-container py-6 flex flex-col gap-2">
               {NAV_LINKS.map((link, i) => (
@@ -151,11 +151,11 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <div className="pt-2 border-t border-dark-600/50">
+              <div className="pt-2 border-t">
                 <Link
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="btn-primary w-full justify-center mt-2"
+                  className=" w-full justify-center mt-2"
                 >
                   Get In Touch
                 </Link>

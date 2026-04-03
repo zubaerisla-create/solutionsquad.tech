@@ -24,7 +24,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Solution Sqauad — Software Development Company",
+  metadataBase: new URL('https://solutionsquad.tech'),
+  title: "Solution Squad — Software Development Company",
   description:
     "We build exceptional mobile apps, web platforms, and backend systems. React Native, Flutter, Next.js, NestJS, FastAPI specialists.",
   keywords: [
@@ -38,9 +39,14 @@ export const metadata: Metadata = {
     "web development",
   ],
   openGraph: {
-    title: "Solution Sqauad",
+    title: "Solution Squad",
     description: "We craft exceptional digital products.",
     type: "website",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Solution Squad',
+    description: 'We craft exceptional digital products.',
   },
 };
 
