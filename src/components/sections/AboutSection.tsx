@@ -14,10 +14,10 @@ import { Target, Search, Handshake, Rocket, ExternalLink, ArrowUpRight } from "l
    DATA
 ───────────────────────────────────────── */
 const VALUES = [
-  { icon: Target,    title: "Outcome-Driven", desc: "We don't just write code — we solve business problems."                          },
-  { icon: Search,    title: "Quality First",  desc: "Rigorous code review, testing, and performance tuning on every project."         },
-  { icon: Handshake, title: "True Partnership",desc: "Transparent communication and collaboration from kickoff to launch."            },
-  { icon: Rocket,    title: "Ship Fast",       desc: "Agile sprints that get your product to market without sacrificing quality."      },
+  { icon: Target, title: "Outcome-Driven", desc: "We don't just write code — we solve business problems." },
+  { icon: Search, title: "Quality First", desc: "Rigorous code review, testing, and performance tuning on every project." },
+  { icon: Handshake, title: "True Partnership", desc: "Transparent communication and collaboration from kickoff to launch." },
+  { icon: Rocket, title: "Ship Fast", desc: "Agile sprints that get your product to market without sacrificing quality." },
 ];
 
 const TEAM = [
@@ -36,7 +36,7 @@ const TEAM = [
     bio: "Passionate Web & App Developer focused on building scalable, user-friendly, and high-performance applications.",
     avatar: "https://i.ibb.co.com/b5g4tH0s/hayat01.jpg",
     linkedin: "https://www.linkedin.com/in/abu-hayat-716a49328/",
-    skills: ["Node.js", "Native", "Flatter","MySQL",""],
+    skills: ["Node.js", "Native", "Flatter", "MySQL", ""],
     accent: "from-blue-400 to-indigo-500",
   },
   {
@@ -45,7 +45,7 @@ const TEAM = [
     bio: "Versatile full stack developer with expertise in TypeScript, Golang, and Docker.",
     avatar: "https://i.ibb.co.com/V0CSRpJ9/340137c4-126d-4e43-a5de-382ed7f0b249.jpg",
     linkedin: "https://www.linkedin.com/in/abdullah-al-zubaer-309065292/",
-    skills: ["TypeScript", "Golang", "Docker","Python","Django","FastAPI"],
+    skills: ["TypeScript", "Golang", "Docker", "Python", "Django", "FastAPI"],
     accent: "from-violet-400 to-purple-500",
   },
   {
@@ -69,10 +69,10 @@ const TEAM = [
 ];
 
 const STATS = [
-  { value: "50+",  label: "Projects Shipped" },
-  { value: "98%",  label: "Client Retention"  },
-  { value: "7yr",  label: "In Business"        },
-  { value: "12",   label: "Team Members"       },
+  { value: "50+", label: "Projects Shipped" },
+  { value: "98%", label: "Client Retention" },
+  { value: "2yr+", label: "In Business" },
+  { value: "12+", label: "Team Members" },
 ];
 
 /* ─────────────────────────────────────────
@@ -226,15 +226,15 @@ export default function AboutSection() {
     offset: ["start end", "end start"],
   });
 
-  const bgBlobY   = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const bgBlobY2  = useTransform(scrollYProgress, [0, 1], ["10%",  "-8%"]);
-  const leftX     = useTransform(scrollYProgress, [0, 0.4], [-60, 0]);
-  const leftOp    = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-  const rightX    = useTransform(scrollYProgress, [0, 0.4], [60, 0]);
-  const rightOp   = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+  const bgBlobY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const bgBlobY2 = useTransform(scrollYProgress, [0, 1], ["10%", "-8%"]);
+  const leftX = useTransform(scrollYProgress, [0, 0.4], [-60, 0]);
+  const leftOp = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+  const rightX = useTransform(scrollYProgress, [0, 0.4], [60, 0]);
+  const rightOp = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
 
   /* Label line reveal */
-  const labelRef  = useRef(null);
+  const labelRef = useRef(null);
   const labelView = useInView(labelRef, { once: true, margin: "-80px" });
 
   return (
@@ -285,7 +285,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24">
 
           {/* LEFT — Story */}
-          <motion.div style={{ x: leftX, opacity: leftOp }}>
+          <motion.div className="pl-6 md:pl-0" style={{ x: leftX, opacity: leftOp }}>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.0] tracking-tighter text-white mb-8">
               Engineers who{" "}

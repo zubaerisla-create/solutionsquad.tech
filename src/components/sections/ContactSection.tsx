@@ -3,39 +3,42 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight } from "@/lib/utils";
+import { staggerContainer, fadeInLeft, fadeInRight } from "@/lib/utils";
+
+// Only non-brand icons (these still exist in Lucide)
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+} from "lucide-react";
 
 const CONTACT_INFO = [
   {
-    icon: "📧",
+    icon: Mail,
     label: "Email",
     value: "hello@devcraft.studio",
-    href: "mailto:hello@devcraft.studio",
+    href: "solutionsquad.tech@gmail.com",
   },
   {
-    icon: "📞",
+    icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+8801873858744",
+    href: "tel:+8801873858744",
   },
   {
-    icon: "📍",
+    icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA (Remote-first)",
+    value: "Gulshan 1 , Dhaka, Bangladesh",
     href: "#",
   },
-  {
-    icon: "⏰",
-    label: "Hours",
-    value: "Mon–Fri, 9am–6pm PST",
-    href: "#",
-  },
+ 
 ];
 
 const SOCIAL_LINKS = [
-  { label: "GitHub", href: "https://github.com", icon: "⌥" },
+  { label: "GitHub", href: "https://github.com", icon: "GitHub" },
   { label: "LinkedIn", href: "https://linkedin.com", icon: "in" },
-  { label: "Twitter / X", href: "https://twitter.com", icon: "𝕏" },
+  { label: "X", href: "https://twitter.com", icon: "𝕏" },
   { label: "Dribbble", href: "https://dribbble.com", icon: "◉" },
 ];
 
@@ -79,7 +82,6 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    // Simulate API call
     await new Promise((r) => setTimeout(r, 1500));
     setStatus("success");
     setForm({ name: "", email: "", company: "", service: "", budget: "", message: "" });
@@ -93,7 +95,6 @@ export default function ContactSection() {
     <section id="contact" className="section-padding relative overflow-hidden">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-400/40 to-transparent" />
 
-      {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-500/5 rounded-full blur-3xl" />
       </div>
@@ -121,46 +122,29 @@ export default function ContactSection() {
           >
             {/* Contact details */}
             <motion.div variants={fadeInLeft} className="space-y-4">
-              {CONTACT_INFO.map((info) => (
-                <a
-                  key={info.label}
-                  href={info.href}
-                  className="flex items-start gap-4 p-4 rounded-xl border border-dark-600/40 bg-dark-800/20 hover:border-brand-500/30 hover:bg-brand-dim transition-all duration-300 group"
-                >
-                  <span className="text-xl mt-0.5 flex-shrink-0">{info.icon}</span>
-                  <div>
-                    <div className="text-xs text-[var(--muted)] font-mono uppercase tracking-wider mb-0.5">
-                      {info.label}
+              {CONTACT_INFO.map((info) => {
+                const Icon = info.icon;
+                return (
+                  <a
+                    key={info.label}
+                    href={info.href}
+                    className="flex items-start gap-4 p-4 rounded-xl border border-dark-600/40 bg-dark-800/20 hover:border-brand-500/30 hover:bg-brand-dim transition-all duration-300 group"
+                  >
+                    <Icon className="w-5 h-5 mt-0.5 flex-shrink-0 text-brand-400" />
+                    <div>
+                      <div className="text-xs text-[var(--muted)] font-mono uppercase tracking-wider mb-0.5">
+                        {info.label}
+                      </div>
+                      <div className="text-sm font-display font-medium group-hover:text-brand-400 transition-colors">
+                        {info.value}
+                      </div>
                     </div>
-                    <div className="text-sm font-display font-medium group-hover:text-brand-400 transition-colors">
-                      {info.value}
-                    </div>
-                  </div>
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </motion.div>
 
-            {/* Social links */}
-            <motion.div variants={fadeInLeft}>
-              <h4 className="font-display font-semibold text-sm text-[var(--muted)] uppercase tracking-wider mb-4">
-                Follow Us
-              </h4>
-              <div className="flex gap-3">
-                {SOCIAL_LINKS.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    title={s.label}
-                    className="w-10 h-10 rounded-lg border border-dark-600/50 flex items-center justify-center text-sm font-mono text-[var(--muted)] hover:border-brand-500/50 hover:text-brand-400 hover:bg-brand-dim transition-all duration-300"
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
+           
 
             {/* Availability card */}
             <motion.div
@@ -181,7 +165,7 @@ export default function ContactSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right — Form */}
+          {/* Right — Form (unchanged) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -208,6 +192,7 @@ export default function ContactSection() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Your form fields here - same as before */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono text-[var(--muted)] uppercase tracking-wider mb-1.5">
