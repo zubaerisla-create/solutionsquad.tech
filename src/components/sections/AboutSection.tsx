@@ -22,10 +22,19 @@ const VALUES = [
 
 const TEAM = [
   {
+    name: "Shahriar Alam",
+    role: "Senior Software Developer",
+    bio: "Odoo , AWS , Ai , ERP expert, helping businesses streamline operations and scale with cloud solutions.",
+    avatar: "https://i.ibb.co.com/PGs66NWd/IMG-20260404-094654.jpg",
+    linkedin: "https://www.linkedin.com/in/nazmul-hasan-b3b990369/",
+    skills: ["Odoo", "AWS", "ERP"],
+    accent: "from-emerald-400 to-teal-500",
+  },
+    {
     name: "Nazmul Hasan",
     role: "ERP & AWS Specialist",
     bio: "Odoo & AWS expert, helping businesses streamline operations and scale with cloud solutions.",
-    avatar: "https://i.ibb.co.com/5hTqddFj/nazmol01.jpg",
+    avatar: "https://i.ibb.co.com/zT8ZmGpp/IMG-20260404-WA0006-1.jpg",
     linkedin: "https://www.linkedin.com/in/nazmul-hasan-b3b990369/",
     skills: ["Odoo", "AWS", "ERP"],
     accent: "from-emerald-400 to-teal-500",
@@ -48,22 +57,31 @@ const TEAM = [
     skills: ["TypeScript", "Golang", "Docker", "Python", "Django", "FastAPI"],
     accent: "from-violet-400 to-purple-500",
   },
-  {
-    name: "Rabeya Akter Zumur",
-    role: "International Sales",
-    bio: "Experienced sales communicator with a knack for building relationships across borders.",
-    avatar: "https://i.ibb.co.com/Xxg8kQfQ/image.png",
-    linkedin: "#",
-    skills: ["Communication", "Sales", "Leadership"],
-    accent: "from-rose-400 to-pink-500",
-  },
-  {
+    {
     name: "Nayeem Miah",
     role: "Backend Development Specialist",
     bio: "Competitive programmer with a passion for building scalable backend systems.",
     avatar: "https://i.ibb.co.com/TBLb9PhN/6233008702516563729.jpg",
     linkedin: "#",
     skills: ["Node.js", "PostgreSQL", "Redis"],
+    accent: "from-amber-400 to-orange-500",
+  },
+  {
+    name: "Rabeya Akter Zumur",
+    role: "International Sales",
+    bio: "A dynamic international sales strategist who excels at turning conversations into long-term partnerships. Known for understanding diverse markets and delivering value-driven solutions that bridge cultures and drive global growth.",
+    avatar: "https://i.ibb.co.com/Xxg8kQfQ/image.png",
+    linkedin: "#",
+    skills: ["Communication", "Sales", "Leadership"],
+    accent: "from-rose-400 to-pink-500",
+  },
+   {
+    name: "Swarnali Banik Arpa",
+    role: "International Sales Communication",
+    bio: "Experienced sales communicator with a knack for building relationships across borders.",
+    avatar: "https://i.ibb.co.com/XxPbr8DY/IMG-20260404-094428.jpg",
+    linkedin: "#",
+    skills: ["Communication", "Sales", "Leadership"],
     accent: "from-amber-400 to-orange-500",
   },
 ];

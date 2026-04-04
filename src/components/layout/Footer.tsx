@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com", icon: "⌥" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "in" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/solution-squad-tech/", icon: "in" },
   { label: "Twitter", href: "https://twitter.com", icon: "𝕏" },
   { label: "Dribbble", href: "https://dribbble.com", icon: "◉" },
 ];
@@ -82,10 +82,10 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:hello@devcraft.studio"
+                  href="mailto:solutiontionsquad.tech@gmail.com"
                   className="text-sm text-[var(--muted)] hover:text-brand-400 transition-colors"
                 >
-                  hello@devcraft.studio
+                  solutiontionsquad.tech@gmail.com
                 </a>
               </li>
               <li>
@@ -93,7 +93,7 @@ export default function Footer() {
                   href="tel:+15551234567"
                   className="text-sm text-[var(--muted)] hover:text-brand-400 transition-colors"
                 >
-                  +1 (555) 123-4567
+                  +880156047265
                 </a>
               </li>
               <li className="text-sm text-[var(--muted)]">

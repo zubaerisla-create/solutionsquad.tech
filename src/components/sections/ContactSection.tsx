@@ -17,7 +17,7 @@ const CONTACT_INFO = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@devcraft.studio",
+    value: "solutiontionsquad.tech@gmail.com",
     href: "solutionsquad.tech@gmail.com",
   },
   {
