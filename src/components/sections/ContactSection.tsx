@@ -91,7 +91,7 @@ export default function ContactSection() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "656b0aca-062a-43ab-aa98-8a3cdcc252be",
+          access_key: "3630b7f1-387e-49a4-b0d7-4862ea638015",
           ...form,
           subject: `New Business Inquiry from ${form.name}`,
           from_name: "Solution Squad Portfolio",
