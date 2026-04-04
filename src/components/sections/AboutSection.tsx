@@ -80,7 +80,7 @@ const TEAM = [
     role: "International Sales Communication",
     bio: "Experienced sales communicator with a knack for building relationships across borders.",
     avatar: "https://i.ibb.co.com/XxPbr8DY/IMG-20260404-094428.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/swarnali-arpa-47761238b/",
     skills: ["Communication", "Sales", "Leadership"],
     accent: "from-amber-400 to-orange-500",
   },
