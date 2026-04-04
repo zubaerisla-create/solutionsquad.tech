@@ -26,7 +26,7 @@ const TEAM = [
     role: "Senior Software Developer",
     bio: "Odoo , AWS , Ai , ERP expert, helping businesses streamline operations and scale with cloud solutions.",
     avatar: "https://i.ibb.co.com/PGs66NWd/IMG-20260404-094654.jpg",
-    linkedin: "https://www.linkedin.com/in/nazmul-hasan-b3b990369/",
+    linkedin: "https://www.linkedin.com/in/md-shahriar-alam-b0082b240/",
     skills: ["Odoo", "AWS", "ERP"],
     accent: "from-emerald-400 to-teal-500",
   },
