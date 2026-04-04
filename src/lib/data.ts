@@ -75,30 +75,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://drive.google.com/drive/folders/1-Qp45QRb88UIunyPCK8KH-EOfHDf5oyY?dmr=1&ec=wgc-drive-globalnav-goto",
     githubUrl: "#",
   },
-    {
-    id: "7",
-    title: "Backend 1",
-    description:
-      "An intelligent financial management platform that leverages AI to provide personalized insights, automated budgeting, and smart investment recommendations to help users achieve their financial goals.",
-    category: "backend",
-    tech: ["Node.js", "Express", "JWT", "Redis", "Docker"],
-    image: "https://i.ibb.co.com/0VcsPgnT/Gemini-Generated-Image-uule0uule0uule0u.png",
-    gradient: "from-lime-500/20 to-green-500/20",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-    {
-    id: "8",
-    title: "Backend 2",
-    description:
-      "An intelligent financial management platform that leverages AI to provide personalized insights, automated budgeting, and smart investment recommendations to help users achieve their financial goals.",
-    category: "backend",
-    tech: ["Node.js", "Express", "JWT", "Redis", "Docker"],
-    image: "https://i.ibb.co.com/0VcsPgnT/Gemini-Generated-Image-uule0uule0uule0u.png",
-    gradient: "from-lime-500/20 to-green-500/20",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
+
 ];
 
 export const SERVICES: Service[] = [

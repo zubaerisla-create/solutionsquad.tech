@@ -296,7 +296,7 @@ export default function AboutSection() {
 
             <div className="space-y-5 text-white/45 leading-relaxed text-[15px] mb-10">
               <p>
-                Solution Squad was founded in 2018 by a team of engineers who were
+                Solution Squad was founded in 2023 by a team of engineers who were
                 tired of seeing great ideas fail due to poor technical execution.
                 We set out to build a studio where craft, speed, and honesty aren't
                 trade-offs — they're the standard.
