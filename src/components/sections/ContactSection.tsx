@@ -71,7 +71,7 @@ export default function ContactSection() {
     budget: "",
     message: "",
   });
-  const [status, setStatus] = useState<Status>("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -82,10 +82,36 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus("success");
-    setForm({ name: "", email: "", company: "", service: "", budget: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "656b0aca-062a-43ab-aa98-8a3cdcc252be",
+          ...form,
+          subject: `New Business Inquiry from ${form.name}`,
+          from_name: "Solution Squad Portfolio",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", company: "", service: "", budget: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   const inputClass =
@@ -189,6 +215,26 @@ export default function ContactSection() {
                   <p className="text-[var(--muted)] text-sm">
                     Thanks for reaching out. We'll get back to you within 24 hours.
                   </p>
+                </motion.div>
+              ) : status === "error" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center py-12 text-center"
+                >
+                  <div className="text-5xl mb-4">❌</div>
+                  <h4 className="font-display font-bold text-xl mb-2 text-red-400">
+                    Submission Failed
+                  </h4>
+                  <p className="text-[var(--muted)] text-sm">
+                    Something went wrong. Please try again or email us directly at solutionsquad.tech@gmail.com.
+                  </p>
+                  <button 
+                    onClick={() => setStatus("idle")}
+                    className="mt-6 text-xs text-brand-400 hover:underline font-mono uppercase tracking-widest"
+                  >
+                    Try Again
+                  </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
