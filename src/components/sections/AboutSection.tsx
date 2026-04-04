@@ -43,7 +43,7 @@ const TEAM = [
     name: "Abu Hayat",
     role: "Web & App Development Expart",
     bio: "Passionate Web & App Developer focused on building scalable, user-friendly, and high-performance applications.",
-    avatar: "https://i.ibb.co.com/b5g4tH0s/hayat01.jpg",
+    avatar: "https://i.ibb.co.com/cKHrCJ4j/03e52a60-6223-4dad-9a9e-41f80cda5784.jpg",
     linkedin: "https://www.linkedin.com/in/abu-hayat-716a49328/",
     skills: ["Node.js", "Native", "Flatter", "MySQL", ""],
     accent: "from-blue-400 to-indigo-500",
