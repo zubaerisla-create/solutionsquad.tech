@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import GA4Tracker from "@/components/GA4Tracker";
+import { Suspense } from "react";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -61,6 +63,9 @@ export default function RootLayout({
         className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Suspense fallback={null}>
+            <GA4Tracker measurementId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+          </Suspense>
           <Navbar />
           <main>{children}</main>
           <Footer />
