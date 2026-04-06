@@ -60,7 +60,7 @@ export const PROJECTS: Project[] = [
     tech: ["Flutter", "Dart", "Firebase", "Stripe"],
     image: "https://i.ibb.co.com/ZRfmJyDV/Gemini-Generated-Image-8sqsd68sqsd68sqs.png",
     gradient: "from-pink-500/20 to-rose-500/20",
-    liveUrl: "https://drive.google.com/drive/u/0/folders/1k776N7KOtc6B15p5PYKh7D_c2U0Xd8w4",
+    liveUrl: "",
     githubUrl: "#",
   },
   {
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     tech: ["Node.js", "Express", "JWT", "Redis", "Docker"],
     image: "https://i.ibb.co.com/0VcsPgnT/Gemini-Generated-Image-uule0uule0uule0u.png",
     gradient: "from-lime-500/20 to-green-500/20",
-    liveUrl: "https://drive.google.com/drive/folders/1-Qp45QRb88UIunyPCK8KH-EOfHDf5oyY?dmr=1&ec=wgc-drive-globalnav-goto",
+    liveUrl: "",
     githubUrl: "#",
   },
 
