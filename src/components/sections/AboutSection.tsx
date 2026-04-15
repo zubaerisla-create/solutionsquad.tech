@@ -21,15 +21,7 @@ const VALUES = [
 ];
 
 const TEAM = [
-  {
-    name: "Shahriar Alam",
-    role: "Senior Software Developer",
-    bio: "Odoo , AWS , Ai , ERP expert, helping businesses streamline operations and scale with cloud solutions.",
-    avatar: "https://i.ibb.co.com/PGs66NWd/IMG-20260404-094654.jpg",
-    linkedin: "https://www.linkedin.com/in/md-shahriar-alam-b0082b240/",
-    skills: ["Odoo", "AWS", "ERP"],
-    accent: "from-emerald-400 to-teal-500",
-  },
+
     {
     name: "Nazmul Hasan",
     role: "ERP & AWS Specialist",
@@ -41,7 +33,7 @@ const TEAM = [
   },
   {
     name: "Abu Hayat",
-    role: "Web & App Development Expart",
+    role: "Web & App Development Expert",
     bio: "Passionate Web & App Developer focused on building scalable, user-friendly, and high-performance applications.",
     avatar: "https://i.ibb.co.com/cKHrCJ4j/03e52a60-6223-4dad-9a9e-41f80cda5784.jpg",
     linkedin: "https://www.linkedin.com/in/abu-hayat-716a49328/",
