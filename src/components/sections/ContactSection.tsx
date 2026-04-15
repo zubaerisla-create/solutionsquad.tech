@@ -23,8 +23,8 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+8801873858744",
-    href: "tel:+8801873858744",
+    value: "+8801601002224",
+    href: "tel:+8801601002224",
   },
   {
     icon: MapPin,

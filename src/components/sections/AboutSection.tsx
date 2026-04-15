@@ -22,7 +22,7 @@ const VALUES = [
 
 const TEAM = [
 
-    {
+  {
     name: "Nazmul Hasan",
     role: "ERP & AWS Specialist",
     bio: "Odoo & AWS expert, helping businesses streamline operations and scale with cloud solutions.",
@@ -49,7 +49,7 @@ const TEAM = [
     skills: ["TypeScript", "Golang", "Docker", "Python", "Django", "FastAPI"],
     accent: "from-violet-400 to-purple-500",
   },
-    {
+  {
     name: "Nayeem Miah",
     role: "Backend Development Specialist",
     bio: "Competitive programmer with a passion for building scalable backend systems.",
@@ -67,7 +67,7 @@ const TEAM = [
     skills: ["Communication", "Sales", "Leadership"],
     accent: "from-rose-400 to-pink-500",
   },
-   {
+  {
     name: "Swarnali Banik Arpa",
     role: "International Sales Communication",
     bio: "Experienced sales communicator with a knack for building relationships across borders.",
