@@ -93,11 +93,11 @@ export default function Footer() {
                   href="tel:+15551234567"
                   className="text-sm text-[var(--muted)] hover:text-brand-400 transition-colors"
                 >
-                  +880156047265
+                  +8801601002224
                 </a>
               </li>
               <li className="text-sm text-[var(--muted)]">
-                San Francisco, CA
+             Gulshan 1 , Dhaka , Bangladesh
               </li>
             </ul>
           </div>
