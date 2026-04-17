@@ -107,9 +107,7 @@ export default function Footer() {
           <p className="text-xs text-[var(--muted)]">
             © {new Date().getFullYear()} Solution Sqauad. All rights reserved.
           </p>
-          <p className="text-xs text-[var(--muted)] font-mono">
-            Built with Next.js + Framer Motion
-          </p>
+    
         </div>
       </div>
     </footer>
