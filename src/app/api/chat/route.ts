@@ -1,10 +1,8 @@
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getAvailableTimeSlots, appendBookingRecord } from "@/lib/sheetsUtils";
 import { createZoomMeeting } from "@/lib/zoomUtils";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
 const SYSTEM_PROMPT = `You are SSTech Agent, a professional and helpful AI assistant for **Solution Squad** — a premium software development company.
 
@@ -100,34 +98,28 @@ function convertTo24Hour(time12h: string): string {
   return `${String(hours).padStart(2, "0")}:${minutes}`;
 }
 
-const tools: OpenAI.Chat.ChatCompletionTool[] = [
+const tools: any = [
   {
-    type: "function",
-    function: {
-      name: "get_available_slots",
-      description: "Retrieves the available meeting time slots from the scheduling system. Call this when the user wants to book a meeting.",
-      parameters: {
-        type: "object",
-        properties: {},
+    functionDeclarations: [
+      {
+        name: "get_available_slots",
+        description: "Retrieves the available meeting time slots from the scheduling system. Call this when the user wants to book a meeting.",
       },
-    },
-  },
-  {
-    type: "function",
-    function: {
-      name: "book_meeting",
-      description: "Books a Zoom meeting once the client's name, email, and time slot are confirmed.",
-      parameters: {
-        type: "object",
-        properties: {
-          clientName: { type: "string", description: "The full name of the client" },
-          clientEmail: { type: "string", description: "The email address of the client" },
-          date: { type: "string", description: "The date of the meeting in YYYY-MM-DD format (e.g. 2026-05-01)" },
-          time: { type: "string", description: "The time of the meeting such as '10:00 AM'" },
+      {
+        name: "book_meeting",
+        description: "Books a Zoom meeting once the client's name, email, and time slot are confirmed.",
+        parameters: {
+          type: "object" as const,
+          properties: {
+            clientName: { type: "string" as const, description: "The full name of the client" },
+            clientEmail: { type: "string" as const, description: "The email address of the client" },
+            date: { type: "string" as const, description: "The date of the meeting in YYYY-MM-DD format (e.g. 2026-05-01)" },
+            time: { type: "string" as const, description: "The time of the meeting such as '10:00 AM'" },
+          },
+          required: ["clientName", "clientEmail", "date", "time"],
         },
-        required: ["clientName", "clientEmail", "date", "time"],
       },
-    },
+    ],
   },
 ];
 
@@ -135,31 +127,37 @@ export async function POST(request: Request) {
   try {
     const { messages } = await request.json();
     console.log(messages);
-    if (!process.env.OPENAI_API_KEY) {
-      return Response.json({ message: "Server configuration error: OpenAI API key is missing." }, { status: 500 });
+    if (!process.env.GEMINI_API_KEY) {
+      return Response.json({ message: "Server configuration error: Gemini API key is missing." }, { status: 500 });
     }
 
-    const openaiMessages = [
-      { role: "system", content: SYSTEM_PROMPT },
-      ...messages,
-    ];
-
-    let response = await openai.chat.completions.create({
-      model: "gpt-5-nano",
-      messages: openaiMessages,
-      tools: tools,
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+      tools: tools as any,
+      systemInstruction: SYSTEM_PROMPT,
     });
 
-    let assistantMessage = response.choices[0].message;
+    // Convert messages to Gemini format
+    const geminiMessages = messages.map((msg: any) => ({
+      role: msg.role === "assistant" ? "model" : "user",
+      parts: [{ text: msg.content }],
+    }));
 
-    // Handle tool calls
-    if ((assistantMessage as any).tool_calls) {
-      const toolCalls = (assistantMessage as any).tool_calls as Array<any>;
-      openaiMessages.push(assistantMessage as any);
+    let result = await model.generateContent({
+      contents: geminiMessages,
+    });
 
-      for (const toolCall of toolCalls) {
-        const name = toolCall.function.name;
-        const args = JSON.parse(toolCall.function.arguments);
+    let response = result.response;
+    let text = response.text();
+
+    // Handle function calls
+    const functionCalls = response.functionCalls();
+    if (functionCalls && functionCalls.length > 0) {
+      const functionResults = [];
+
+      for (const call of functionCalls) {
+        const name = call.name;
+        const args = call.args;
         let functionResult = "";
 
         console.log(`[Chat API] Calling function: ${name}`, args);
@@ -167,7 +165,7 @@ export async function POST(request: Request) {
         if (name === "get_available_slots") {
           functionResult = await getAvailableTimeSlots();
         } else if (name === "book_meeting") {
-          const { clientName, clientEmail, date, time } = args;
+          const { clientName, clientEmail, date, time } = args as any;
           try {
             const time24 = convertTo24Hour(time);
             const startTime = `${date}T${time24}:00`;
@@ -181,34 +179,36 @@ export async function POST(request: Request) {
           }
         }
 
-        openaiMessages.push({
-          role: "tool",
-          tool_call_id: toolCall.id,
-          content: functionResult,
-        } as any);
+        functionResults.push({
+          name: name,
+          response: { result: functionResult },
+        });
       }
 
-      // Get a new response after tool calls
-      response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: openaiMessages,
+      // Add function results to conversation and get final response
+      geminiMessages.push({
+        role: "model",
+        parts: [{ functionResponse: { name: functionCalls[0].name, response: { result: functionResults[0].response.result } } }],
       });
-      assistantMessage = response.choices[0].message;
+
+      const followUpResult = await model.generateContent({
+        contents: geminiMessages,
+      });
+
+      text = followUpResult.response.text();
     }
 
-    return Response.json({ message: assistantMessage.content });
+    return Response.json({ message: text });
   } catch (error: any) {
     console.error("[Chat API] Fatal error:", error);
-    const openAIError = error as { message?: string; status?: number; statusCode?: number; response?: { status?: number }; code?: string; type?: string };
-    const errorMessage = openAIError?.message || "Unknown error";
-    const status = openAIError?.response?.status ?? openAIError?.status ?? openAIError?.statusCode ?? 500;
-    const code = openAIError?.code ?? openAIError?.type;
+    const errorMessage = error?.message || "Unknown error";
 
-    if (status === 429 || code === "insufficient_quota" || code === "rate_limit_exceeded") {
+    // Handle Gemini-specific errors
+    if (errorMessage.includes("quota") || errorMessage.includes("rate limit")) {
       return Response.json(
         {
           message:
-            "OpenAI quota exceeded or rate limit reached. Please review your OpenAI plan/billing details, or use a key with available quota.",
+            "Gemini API quota exceeded or rate limit reached. Please check your Google AI Studio billing details.",
         },
         { status: 503 }
       );
